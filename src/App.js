@@ -1,25 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Hello from './sayHello';
 
 function App() {
+
+  const sayHello = () => {
+    // called "arrow function"
+    console.log("haha");
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='this-is-not-class'> {/*There must be a parent div wrpping all things in return(). */}
+      {/* "className because the "class" is taken in JS. Remember, this is not HTML but JS! */}
+      <div>
+      {/* This is not really html code, but JS code, same as "React.createElement(div)" */}
+      <h1>Hello My First Project</h1>
+      <button onClick={sayHello()}>laugh</button>
+      {/* this is saving the trouble of "document.selector(xxx); hello.addListener(...) " */}
+      {/* the curly braces are for JS code (JSX). */}
     </div>
+
+    <div>
+      <h1>This is functions in a component:</h1>
+      <Hello />
+    </div>
+    </div>
+    
   );
 }
 
