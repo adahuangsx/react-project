@@ -23,6 +23,7 @@ const App = () => {
     const search = (e) => {
         e.preventDefault();
         setQuery(keyword);
+        setKeyword('');  // reset the input
     }
 
     const getRecipes = async () => {
@@ -41,19 +42,22 @@ const App = () => {
     return (
         <div>
         <div>
-            <form onSubmit={search} action="" className="serach-form">
+            <form onSubmit={search} action="" className="search-form">
                 <input type="text" className="search-bar" value={keyword} 
                         onChange={updateKeyword} placeholder="chicken"/>
                 <button type="submit" className="search-button">search</button>
                 {/* Note: these functions are "const", so no paratheses.~ */}
             </form>
         </div>
-        <div>
+        <div className="recipes">
             {recipes.map(recipe => (
                 <Recipe key={recipe.recipe.label} 
                         title={recipe.recipe.label}
                         calories={recipe.recipe.calories}
-                        image={recipe.recipe.image}/>
+                        image={recipe.recipe.image}
+                        ingredients={recipe.recipe.ingredientLines}
+                        dietLabels={recipe.recipe.dietLabels}
+                        healthLabels={recipe.recipe.healthLabels}/>
             ))}
             {/* "()" contains JSX code */}
         </div>
