@@ -28,6 +28,9 @@ function App() {
       <button onClick={sayHello()}>laugh</button>
       {/* this is saving the trouble of "document.selector(xxx); hello.addListener(...) " */}
       {/* the curly braces are for JS code (JSX). */}
+
+      {/* The onClick() can also be a oneliner: "onClick={() => setCount(count + 1)}" */}
+      {/* This saves the trouble of making a new function and use only once. */}
     </div>
 
     <div>
