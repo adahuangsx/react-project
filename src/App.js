@@ -2,6 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Recipe from './model/recipe';
 import './App.css';
 
+// * SFC and CC
+// This below is a stateless fuctional compoment.
+// If can be triggered by "sfc"
+// Another common use is "class compoment" or "cc -tab". The render() is just as "return()".
+
+// For sfc, the props must be included in the paratheses; while cc can call "this.props.xxx".
+// For sfc, can be "(props) -- {props.aaa}" or "({aaa, bbb})"
+// For cc, in the render() before return(), we can save all the props passed down from the 
+// upper layer by using "const {aaa, bbb} = this.props" and save the repeat "this.props.xxx"
 const App = () => {
     
     const [recipes, setRecipes] = useState([]);
@@ -34,7 +43,7 @@ const App = () => {
         setRecipes(data.hits);
         console.log(data.hits[0]);
         /**
-         * This can be written as:
+         * * This can be written as:
          * fetch(url)
          * .then(resps => {
          *      resps.json()...
